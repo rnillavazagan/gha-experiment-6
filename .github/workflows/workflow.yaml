@@ -1,4 +1,4 @@
-name: workflow-update
+name: workflow-feature-content-update
 on: [pull_request]
 jobs:
   check-bats-version:
