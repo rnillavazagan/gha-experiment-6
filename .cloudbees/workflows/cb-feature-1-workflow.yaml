@@ -5,7 +5,7 @@ name: My workflow
 on:
   push:
     branches:
-      - 'main'
+      - 'feature-1'
 
 jobs:
   build:
