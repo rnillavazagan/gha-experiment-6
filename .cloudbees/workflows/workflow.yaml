@@ -9,10 +9,10 @@ name: My workflow
 #       - 'main'
 
 
-on:
-  push:
-    tags:
-      - "v*"
+# on:
+#   push:
+#     tags:
+#       - "v*"
 
 jobs:
   build:
