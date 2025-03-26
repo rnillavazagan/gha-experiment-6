@@ -8,20 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          
-      - name: "Install bats"
-        run: |
-          sleep 30
-          npm install -g bats
-        
-      - run: bats -v
-      
+    steps:     
       - name: compile
         run: echo "compile started..."
 
