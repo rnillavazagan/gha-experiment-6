@@ -1,4 +1,6 @@
-name: Reusable Workflow
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Reusable workflow2
 
 on:
   workflow_call:
