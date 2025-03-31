@@ -31,3 +31,10 @@ jobs:
         run: |
           echo "running tests"
           echo sleep 15
+
+  trigger-r2:
+    uses: ./.cloudbees/workflows/reusable-wf2.yaml
+    with:
+      run-tests: true
+    secrets:
+      TOKEN: ${{ secrets.GITHUB_TOKEN }}
