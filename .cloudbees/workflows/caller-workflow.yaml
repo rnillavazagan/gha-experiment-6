@@ -1,0 +1,14 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Caller workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  invoke-reusable:
+    uses: ./workflows/reusable-workflow.yaml
+    with:
+      run-tests: true
