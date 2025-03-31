@@ -36,5 +36,3 @@ jobs:
     uses: ./.cloudbees/workflows/reusable-wf2.yaml
     with:
       run-tests: true
-    secrets:
-      TOKEN: ${{ secrets.GITHUB_TOKEN }}
