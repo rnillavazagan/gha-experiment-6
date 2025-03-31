@@ -9,6 +9,6 @@ on:
 
 jobs:
   invoke-reusable:
-    uses: ./workflows/reusable-workflow.yaml
+    uses: ./.cloudbees/workflows/reusable-workflow.yaml
     with:
       run-tests: true
