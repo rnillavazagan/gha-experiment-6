@@ -19,7 +19,7 @@ jobs:
         shell: sh
         run: |
           echo "build application"
-          echo sleep 15
+          echo sleep 58
 
 
   test:
