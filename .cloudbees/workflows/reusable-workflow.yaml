@@ -19,7 +19,7 @@ jobs:
         shell: sh
         run: |
           echo "build application"
-          echo sleep 10
+          echo sleep 15
 
 
   test:
@@ -30,9 +30,9 @@ jobs:
         shell: sh
         run: |
           echo "running tests"
-          echo sleep 15
+          echo sleep 20
 
-  trigger-r2:
-    uses: ./.cloudbees/workflows/reusable-wf2.yaml
-    with:
-      run-tests: true
+  # trigger-r2:
+  #   uses: ./.cloudbees/workflows/reusable-wf2.yaml
+  #   with:
+  #     run-tests: true
