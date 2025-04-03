@@ -5,7 +5,7 @@ name: Caller workflow
 on:
   push:
     branches:
-      - main
+      - feature
 
 jobs:
   invoke-reusable:
