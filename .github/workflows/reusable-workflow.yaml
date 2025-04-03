@@ -47,13 +47,13 @@ jobs:
           sleep 15
 
       - name: Upload Test Results
-        run: echo "Uploaded results""
+        run: echo "Uploaded results"
 
-  # trigger-r2:
-  #   uses: ./.github/workflows/reusable-wf2.yaml
-  #   with:
-  #     run-tests: true
-  #   secrets:
-  #     TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  trigger-r2:
+    uses: ./.github/workflows/reusable-wf2.yaml
+    with:
+      run-tests: true
+    secrets:
+      TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       
