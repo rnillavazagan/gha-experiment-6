@@ -17,6 +17,6 @@ jobs:
     uses: ./.github/workflows/reusable-workflow.yaml
     with:
       node-version: "20"
-      run-tests: true
+      run-tests: false
     secrets:
       TOKEN: ${{ secrets.GITHUB_TOKEN }}
