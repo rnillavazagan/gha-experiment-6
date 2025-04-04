@@ -32,7 +32,7 @@ jobs:
           echo "running tests"
           echo sleep 20s
 
-  # trigger-r2:
-  #   uses: ./.cloudbees/workflows/reusable-wf2.yaml
-  #   with:
-  #     run-tests: true
+  trigger-r2:
+    uses: ./.cloudbees/workflows/reusable-wf2.yaml
+    with:
+      run-tests: true
