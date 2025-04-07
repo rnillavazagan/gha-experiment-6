@@ -34,7 +34,7 @@ jobs:
           echo "npm install"
           sleep 25
 
-  build-latest-check:
+  test-latest-check:
     if: inputs.run-tests == true
     runs-on: ubuntu-latest
     steps:
