@@ -7,7 +7,7 @@ on:
 
 jobs:
   reusable-1:
-    uses: ./.github/workflows/reusable-workflow.yaml
+    uses: rnillavazagan/gha-experiment-6/.github/workflows/reusable-workflow.yaml
     with:
       node-version: "20"
       run-tests: true

@@ -13,7 +13,7 @@ on:
         required: true
 
 jobs:
-  pick:
+  pick-latest:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code - pick
@@ -29,7 +29,7 @@ jobs:
           echo "npm install"
           sleep 10
 
-  drop:
+  drop-latest:
     if: inputs.run-tests == true
     runs-on: ubuntu-latest
     steps:

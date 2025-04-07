@@ -18,7 +18,7 @@ on:
         required: true
 
 jobs:
-  build:
+  build-latest:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -34,7 +34,7 @@ jobs:
           echo "npm install"
           sleep 25
 
-  test:
+  test-latest:
     if: inputs.run-tests == true
     runs-on: ubuntu-latest
     steps:
@@ -50,7 +50,7 @@ jobs:
         run: echo "Uploaded results"
 
   trigger-r2:
-    uses: ./.github/workflows/reusable-wf2.yaml
+    uses: rnillavazagan/gha-experiment-6/.github/workflows/reusable-wf2.yaml@v1.0.6
     with:
       run-tests: true
     secrets:
