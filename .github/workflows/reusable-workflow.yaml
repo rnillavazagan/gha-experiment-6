@@ -18,7 +18,7 @@ on:
         required: true
 
 jobs:
-  build:
+  build-latest-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -34,7 +34,7 @@ jobs:
           echo "npm install"
           sleep 25
 
-  test:
+  build-latest-check:
     if: inputs.run-tests == true
     runs-on: ubuntu-latest
     steps:
