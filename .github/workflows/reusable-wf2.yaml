@@ -42,4 +42,4 @@ jobs:
           sleep 15
 
       - name: Upload Test Results
-        run: echo "Uploaded results""
+        run: echo "Uploaded results"

@@ -1,0 +1,21 @@
+name: Schedule Caller Workflow
+
+on:
+  schedule:
+     - cron: "*/5 * * * *"
+
+jobs:
+  reusable-1:
+    uses: ./.github/workflows/reusable-workflow.yaml
+    with:
+      node-version: "20"
+      run-tests: true
+    secrets:
+      TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  reusable-2:
+    uses: ./.github/workflows/reusable-workflow.yaml
+    with:
+      node-version: "20"
+      run-tests: false
+    secrets:
+      TOKEN: ${{ secrets.GITHUB_TOKEN }}
