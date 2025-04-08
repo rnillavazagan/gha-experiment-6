@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: "BuildName"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,6 +33,7 @@ jobs:
         run: echo "binary pushing..."
 
   test:
+    name: "TestName"
     runs-on: ubuntu-latest
     needs: [build]   # Depends on 'build' job
     steps:
