@@ -44,8 +44,8 @@ jobs:
           echo "npm install"
           sleep 10
 
-  trigger-r3:
-    uses: ./.github/workflows/reusable-wf3.yaml
+  trigger-r4:
+    uses: ./.github/workflows/reusable-wf4.yaml
     with:
       run-tests: true
     secrets:
