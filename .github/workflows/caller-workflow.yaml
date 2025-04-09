@@ -7,14 +7,14 @@ on:
 
 jobs:
   reusable-1:
-    uses: rnillavazagan/gha-experiment-6/.github/workflows/reusable-workflow.yaml@v1.0.6
+    uses: ./.github/workflows/reusable-workflow.yaml@v1.0.6
     with:
       node-version: "20"
       run-tests: true
     secrets:
       TOKEN: ${{ secrets.GITHUB_TOKEN }}
   reusable-2:
-    uses: rnillavazagan/gha-experiment-6/.github/workflows/reusable-workflow.yaml@v1.0.6
+    uses: ./.github/workflows/reusable-workflow.yaml@v1.0.6
     with:
       node-version: "20"
       run-tests: false
