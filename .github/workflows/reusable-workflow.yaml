@@ -50,7 +50,7 @@ jobs:
         run: echo "Uploaded results"
 
   trigger-r2:
-    uses: ./.github/workflows/reusable-wf2.yaml@v1.0.6
+    uses: ./.github/workflows/reusable-wf2.yaml
     with:
       run-tests: true
     secrets:
