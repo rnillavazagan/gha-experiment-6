@@ -13,7 +13,22 @@ on:
         required: true
 
 jobs:
-  pick-latest:
+  drop:
+    if: inputs.run-tests == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Tests - drop
+        run: |
+          echo "run tests"
+          sleep 15
+
+      - name: Upload Test Results
+        run: echo "Uploaded results"
+
+  pick:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code - pick
@@ -28,18 +43,3 @@ jobs:
         run: |
           echo "npm install"
           sleep 10
-
-  drop-latest:
-    if: inputs.run-tests == true
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Run Tests - drop
-        run: |
-          echo "run tests"
-          sleep 15
-
-      - name: Upload Test Results
-        run: echo "Uploaded results"
