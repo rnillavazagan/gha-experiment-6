@@ -43,7 +43,7 @@ jobs:
         run: |
           echo "npm install"
           sleep 10
-          echo "completed""
+          echo "completed"
 
   # trigger-r3:
   #   uses: ./.github/workflows/reusable-wf3.yaml
