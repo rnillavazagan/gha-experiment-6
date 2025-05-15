@@ -12,7 +12,7 @@ jobs:
         id: go-action
         with:
           name: "gha-exp6-artifact-1"
-          version: "1.0.0"
+          version: "1.0.1"
           url: "docker.io/curlimages/curl:8.12.1"
           digest: "sha256:94e9e444bcba979c2ea12e27ae39bee4cd10bc7041a472c4727a558e213744e6"
           type: "docker"
