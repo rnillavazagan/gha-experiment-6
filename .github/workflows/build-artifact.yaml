@@ -13,8 +13,8 @@ jobs:
         with:
           name: "gha-exp6-artifact-1"
           version: "1.0.0"
-          url: "docker.io/calculi-corp/gha-action/gha-artifact-test-003:latest"
-          digest: "sha256:a1a123ee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb5"
+          url: "docker.io/curlimages/curl:8.12.1"
+          digest: "sha256:94e9e444bcba979c2ea12e27ae39bee4cd10bc7041a472c4727a558e213744e6"
           type: "docker"
           cloudbees-url: "https://api.saas-preprod.beescloud.com"
           cloudbees-pat: ${{ secrets.CBP_TEST_PAT }}
