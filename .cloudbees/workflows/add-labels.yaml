@@ -13,5 +13,5 @@ jobs:
         with:
           component-id: "4a495b74-df03-4aa7-be74-aa2800b1fd14"
           artifact-id: "13d8c5c4-d4f3-49e1-9d55-296d69ab80f4"
-          labels: "verified,secure"
-          operation: "ADD"
+          labels: "verified"
+          operation: "REMOVE"
