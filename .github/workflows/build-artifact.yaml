@@ -1,0 +1,20 @@
+name: PREPROD - GHA Build Artifact Publish Workflow
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  publish-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run My Custom Go Action
+        uses: cloudbees-io-gha/register-build-artifact@v2
+        id: go-action
+        with:
+          name: "gha-artifact-test-1"
+          version: 1.0.0
+          url: "docker.io/calculi-corp/gha-action/gha-artifact-test-003:latest"
+          digest: "sha256:a1a123ee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb5"
+          type: "docker"
+          cloudbees-url: "https://api.saas-preprod.beescloud.com"
+          cloudbees-pat: ${{ secrets.CBP_TEST_PAT }}
