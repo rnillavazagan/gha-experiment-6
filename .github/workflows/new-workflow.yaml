@@ -1,12 +1,27 @@
 name: GHA Workflow
 
 on:
-  pull_request:
+    push:
+      branches:
+        - "main"
 
 jobs:
-  build:
+  b-build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: "Install bats"
+        run: |
+          sleep 30
+          npm install -g bats
+        
+      - run: bats -v
+      
       - name: compile
         run: echo "compile started..."
 
@@ -16,23 +31,23 @@ jobs:
       - name: push-binary
         run: echo "binary pushing..."
 
-  test:
+  a-test:
     runs-on: ubuntu-latest
+    needs: [b-build]   # Depends on 'build' job
     steps:
       - name: Run tests
         run: echo "tests running..."
 
       - name: Collect test results
-        run: sleep 10
+        run: sleep 17
 
       - name: Publish test results
-        run: echo "test results published..."
-        run: echo "test results published..."
+        run: echo "test results published.."
 
 
   deploy:
     runs-on: ubuntu-latest
-    needs: [build, test]   # Depends on both 'build' and 'test' jobs
+    needs: [b-build, a-test]   # Depends on both 'build' and 'test' jobs
     steps:
       - name: prepare-deployment
         run: sleep 15

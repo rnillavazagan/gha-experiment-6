@@ -1,0 +1,38 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      run-tests:
+        description: "Run tests"
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  build:
+    steps:
+      - name: build-binary
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "build application"
+          echo sleep 58s
+
+
+  test:
+    if: inputs.run-tests == true
+    steps:
+      - name: run tests
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "running tests"
+          echo sleep 20s
+
+  trigger-r2:
+    uses: ./.cloudbees/workflows/reusable-wf2.yaml
+    with:
+      run-tests: true
