@@ -28,7 +28,6 @@ jobs:
 
       - name: Publish test results
         run: echo "test results published..."
-        run: echo "test results published..."
 
 
   deploy:
