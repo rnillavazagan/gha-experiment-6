@@ -2,6 +2,7 @@ name: GHA Workflow
 
 on:
   pull_request:
+    types: [opened, reopened]
 
 jobs:
   build:
