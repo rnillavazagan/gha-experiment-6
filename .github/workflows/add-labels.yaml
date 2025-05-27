@@ -13,6 +13,8 @@ jobs:
   label-artifact:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
       - name: Run My Custom Go Action
         uses: ./
         id: go-action
