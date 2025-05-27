@@ -4,14 +4,15 @@ name: My workflow
 on:
   push:
     branches:
-      - "test"
+      - "main"
 jobs:
   build:
     steps:
       - name: Add labels
         uses: cloudbees-io/label-artifact-version@main
         with:
-          component-id: "daf6328c-a799-4d3a-92c7-c32c1c6e07eb"
+          # component-id: "daf6328c-a799-4d3a-92c7-c32c1c6e07eb"
+          component-id: "4a495b74-df03-4aa7-be74-aa2800b1fd14"
           artifact-id: "8b14110d-cf31-41a9-9e94-9a4f8d18708b"
-          labels: "ready"
+          labels: "new"
           operation: "ADD"
