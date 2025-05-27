@@ -1,0 +1,23 @@
+name: PREPROD - GHA Label artifact
+
+on:
+  push:
+    branches:
+      - "main"
+
+permissions:
+  id-token: write
+  contents: read
+  
+jobs:
+  label-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run My Custom Go Action
+        uses: ./
+        id: go-action
+        with:
+          cloudbees-url: "https://api.saas-preprod.beescloud.com"
+          artifact-id: "417011a8-c8fb-4906-bd02-591d51ca3e1a"
+          labels: "ready"
+          operation: "ADD"

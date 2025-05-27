@@ -3,12 +3,12 @@ name: PREPROD - GHA Build Artifact Publish Workflow
 on:
   push:
     branches:
-      - "main"
+      - "test"
 
 permissions:
   id-token: write
   contents: read
-  
+
 jobs:
   publish-artifact:
     runs-on: ubuntu-latest

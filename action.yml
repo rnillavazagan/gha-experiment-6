@@ -1,0 +1,30 @@
+name: 'Manage artifact labels in Platform'
+description: 'Manage artifact labels in Platform'
+
+branding:
+  icon: 'command'
+  color: 'purple'
+
+inputs:
+  cloudbees-url:
+    description: 'The CloudBees platform URL.'
+    required: false
+    default: "https://api.cloudbees.io"
+  artifact-id:
+    description: 'The name of the artifact.'
+    required: true
+  labels:
+    description: 'The version of the artifact.'
+    required: true
+  operation:
+    description: 'The url where the artifact version is located e.g. docker.io/myapp/myimg:1.0.0.'
+    required: true
+
+runs:
+  using: "docker"
+  image: "docker://ghcr.io/rnillavazagan/gha-label-artifact-version:latest"
+  env:
+    CLOUDBEES_API_URL: ${{ inputs.cloudbees-url }}
+    ARTIFACT_ID: ${{ inputs.artifact-id }}
+    LABELS: ${{ inputs.labels }}
+    OPERATION: ${{ inputs.operation }}
