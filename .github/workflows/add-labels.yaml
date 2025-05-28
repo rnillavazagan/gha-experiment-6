@@ -20,6 +20,6 @@ jobs:
         id: go-action
         with:
           cloudbees-url: "https://api.saas-preprod.beescloud.com"
-          artifact-id: "78f2705e-4421-4bc7-a62d-aa0acbcf7ddd"
-          labels: "verified,feature"
-          operation: "ADD"
+          artifact-id: "78f2705e-4421-4bc7-a62d-aa0acbcf7dd"
+          labels: "feature,reopened"
+          operation: "REPLACE"
