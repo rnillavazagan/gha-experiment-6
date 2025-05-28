@@ -3,7 +3,7 @@ name: PREPROD - GHA Label artifact
 on:
   push:
     branches:
-      - "main"
+      - "test"
 
 permissions:
   id-token: write
