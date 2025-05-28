@@ -3,7 +3,7 @@ name: PREPROD - GHA Build Artifact Publish Workflow
 on:
   push:
     branches:
-      - "main"
+      - "test"
 
 permissions:
   id-token: write
