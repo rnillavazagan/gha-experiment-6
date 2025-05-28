@@ -3,7 +3,7 @@ name: PREPROD - GHA Label artifact
 on:
   push:
     branches:
-      - "main"
+      - "test"
 
 permissions:
   id-token: write
@@ -21,4 +21,5 @@ jobs:
         with:
           cloudbees-url: "https://api.saas-preprod.beescloud.com"
           artifact-id: "417011a8-c8fb-4906-bd02-591d51ca3e1a"
+          labels: "verified,feature"
           operation: "REPLACE"
