@@ -1,6 +1,9 @@
 name: GH Workflow 3
 
-on: [push]
+on:
+  push:
+    branches:
+      - "main"
 
 jobs:
   lint:
@@ -10,7 +13,7 @@ jobs:
       - name: Lint code
         run: |
           echo "Running linter..."
-          sleep 10    # Simulate long linting
+          sleep 10  
 
   test:
     needs: lint 
@@ -22,11 +25,11 @@ jobs:
           echo "Running tests..."
           sleep 30   # Slow test suite
 
-      - name: This step is always skipped
+      - name: Run check
         if: github.event_name == 'pull_request' 
         run: echo "This never runs."
 
-      - name: Install tool (unnecessary bottleneck)
+      - name: Install tool
         run: |
           sudo apt-get update
           sudo apt-get install -y cowsay
