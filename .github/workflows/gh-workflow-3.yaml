@@ -3,7 +3,6 @@ name: GH Workflow 3
 on: [push]
 
 jobs:
-  # These three jobs could easily run in parallel but are set up to run in sequence
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -14,7 +13,7 @@ jobs:
           sleep 10    # Simulate long linting
 
   test:
-    needs: lint  # Unnecessary dependency; could run in parallel with lint
+    needs: lint 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +23,7 @@ jobs:
           sleep 30   # Slow test suite
 
       - name: This step is always skipped
-        if: github.event_name == 'pull_request'   # (But workflow only runs on `push`)
+        if: github.event_name == 'pull_request' 
         run: echo "This never runs."
 
       - name: Install tool (unnecessary bottleneck)
@@ -37,19 +36,15 @@ jobs:
         run: cowsay "Hello!"
 
   build:
-    needs: test   # Could actually run in parallel, or after lint, but waits for all other jobs
+    needs: test   
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Build project
         run: |
           echo "Building..."
-          sleep 20   # Simulate a slow build
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-build
-          path: build/
+          sleep 20 
+
 
   deploy:
     needs: build
